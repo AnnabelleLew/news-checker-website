@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Previously Read Articles</h1>
+    <h3>All links redirect to news sources outside of this website.</h3>
+
+    {% if articlebias_list %}
+    <ul>
+        {% for articlebias in articlebias_list %}
+        <li>
+            {% if articlebias.bias == -5 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Very strong left bias)</p>
+            {% endif %}
+            {% if articlebias.bias == -4 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Strong left bias)</p>
+            {% endif %}
+            {% if articlebias.bias == -3 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Left bias)</p>
+            {% endif %}
+            {% if articlebias.bias == -2 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Weak left bias)</p>
+            {% endif %}
+            {% if articlebias.bias == -1 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Very weak left bias)</p>
+            {% endif %}
+            {% if articlebias.bias == 0 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Unbiased)</p>
+            {% endif %}
+            {% if articlebias.bias == 1 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Very weak right bias)</p>
+            {% endif %}
+            {% if articlebias.bias == 2 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Weak right bias)</p>
+            {% endif %}
+            {% if articlebias.bias == 3 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Right bias)</p>
+            {% endif %}
+            {% if articlebias.bias == 4 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Strong right bias)</p>
+            {% endif %}
+            {% if articlebias.bias == 5 %}
+                <p><a href="{{articlebias.article.url}}">{{articlebias.article.url}}</a> (Very strong right bias)</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>You haven't read any articles.</p>
+    {% endif %}
+{% endblock %}

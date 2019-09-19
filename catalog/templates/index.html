@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+<!--HOMEPAGE HTML-->
+{% load static %}
+{% block content %}
+    <table id="homepage">
+        <tr>
+            <td id="homepage-text-container">
+                <h1 class="left-align-text">Read the news, smarter.</h1>
+                <p class="left-align-text" style="font-size: 25px">The News Checker Project aims to encourage news readers to have a deeper understanding of what they read.</p>
+                <a href="{% url 'about'%}"><input type="submit" value="Learn More" /></a>
+            </td>
+            <td id="homepage-img-container">
+                <img src="{% static 'img/screenshot.png' %}" id="homepage-img" />
+            </td>
+        </tr>
+    </table>
+{% endblock %}

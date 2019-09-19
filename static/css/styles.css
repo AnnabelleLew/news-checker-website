@@ -1,0 +1,196 @@
+/* font imports */
+@font-face {
+    font-family: chomsky;
+    src: url(fonts/chomsky.otf);
+}
+
+/* navigation bar CSS */
+.menubar-nav {
+    background-color: #1a1a19;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 43px;
+    display: flex;
+    align-items: middle;
+    justify-content: center;
+}
+.menu-text {
+    text-align: center;
+    margin: 0;
+    padding: 10px 50px;
+    display: inline;
+    color: #cbc7bf;
+    font-family: "times";
+    font-size: 20px;
+    line-height: 1.15;
+    text-decoration: none;
+    float: left;
+}
+.menu-text:hover {
+    color: #ededdd;
+}
+@media screen and (max-width: 1000px) {
+    /* makes navigation appear and disappear on smaller screens */
+    #small-hidden-nav {
+        display: none;
+    }
+    .menubar-nav {
+        background-color: #1a1a19;
+        list-style-type: none;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        display: block;
+        align-items: middle;
+        justify-content: center;
+    }
+    .menu-text {
+        margin: 0;
+        padding: 10px;
+        color: #cbc7bf;
+        font-family: "times";
+        font-size: 20px;
+        line-height: 1.15;
+        text-decoration: none;
+        width: 100%;
+    }
+    /* menu bar icon CSS */
+    #icon {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 43px;
+        width: 43px;
+    }
+    #bar1, #bar2, #bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #cbc7bf;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    .change #bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    .change #bar2 {opacity: 0;}
+    .change #bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+}
+
+/* general content CSS */
+.content {
+    margin-top: 50px;
+    padding: 10px 20px;
+}
+body {
+    background-color: #e9e8e3;
+}
+h1 {
+    font-family: chomsky;
+    font-size: 50px;
+    color: #1a1a19;
+    font-weight: normal;
+    text-align: center;
+}
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "times";
+    color: #1a1a19;
+}
+h3 {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "times";
+    color: #1a1a19;
+}
+p, a, li, td, th {
+    font-family: "times";
+    font-size: 18px;
+    color: #1a1a19;
+    line-height: 2;
+    font-weight: normal;
+}
+td, th {
+    padding-right: 100px;
+}
+
+/* homepage CSS */
+.left-align-text {
+    /* used for homepage text */
+    text-align: left;
+    display: block;
+    margin: 5px;
+    width: 90%;
+}
+#homepage {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+#homepage-text-container {
+    padding: 10px 50px;
+    background-color: #cbc7bf;
+    width: 50%;
+}
+#homepage-img-container {
+    padding: 20px 10px;
+}
+#homepage-img {
+    max-width: 60%;
+    display: block;
+    margin: 0 auto;
+    border: 20px double #1a1a19;
+}
+@media screen and (max-width: 1000px) {
+    /* gets rid of image on mobile */
+    #homepage-text-container {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #e9e8e3;
+    }
+    #homepage-img-container {
+        display: none;
+    }
+}
+
+/* forms CSS */
+input[type=text], input[type=password], input[type=email] {
+    border: none;
+    border-bottom: 2px solid #a19a8b;
+    font-size: 18px;
+    color: #1a1a19;
+    background-color: #e9e8e3;
+    padding: 5px 0px;
+}
+input[type=submit] {
+    background-color: #1a1a19;
+    border: none;
+    color: #cbc7bf;
+    font-family: "times";
+    font-size: 20px;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    color: #ededdd;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--BASE TEMPLATE HTML-->
+<html lang="en">
+    <head>
+        {% block title %}<title>News Checker</title>{% endblock %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Add additional CSS in static file -->
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <script type="text/javascript" language="javascript" src="{% static 'js/nav.js' %}"></script>
+    </head>
+    <body>
+        {% block menubar %}
+            <!--SIDEBAR FOR WEBPAGE-->
+            <div class="menubar-nav">
+                <a href="{% url 'index' %}" class="menu-text">News Checker</a>
+                <div id="small-hidden-nav">
+                    <a href="{% url 'about'%}" class="menu-text">About</a>
+                    {% if user.is_authenticated or authenticated %}
+                        <a href="{% url 'articles' %}" class="menu-text">Article History</a>
+                        <a class="menu-text" href="{% url 'change_password' %}">{{ user.get_username }}{{ username }}</a>
+                        <a href="{% url 'logout'%}" class="menu-text">Logout</a>
+                    {% else %}
+                        <a href="{% url 'login'%}" class="menu-text">Login</a>
+                    {% endif %}
+                </div>
+                <div id="icon" onclick="revealMenu(this)">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+        {% endblock %}
+        <!--CONTENT FOR WEBPAGE-->
+        <div class="content">
+            {% block content %}{% endblock %}
+            {% block pagination %}
+                {% if is_paginated %}
+                <div class="pagination">
+                    <p>
+                        {% if page_obj.has_previous %}
+                            <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">Previous</a>
+                        {% endif %}
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        {% if page_obj.has_next %}
+                            <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">Next</a>
+                        {% endif %}
+                    </p>
+                </div>
+                {% endif %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+<!--ABOUT PAGE HTML-->
+{% block content %}
+    <h1>About Us</h1>
+    <h2>Mission</h2>
+    <p>The News Checker Project was created to encourage news readers to have a deeper understanding of what they read. Given the importance of literacy and education in maintaining democracy, it's important to be aware of both implicit and intentional bias in news articles. I'm hoping that users will find this a useful tool to help them read the news thoughtfully.</p>
+    <h2>Current Progress</h2>
+    <p>As of right now, the News Checker Political Bias AI is in the training/debugging stages, as well as debugging the web extension. If you would like to contribute to training the AI, please download the extension <a>here</a> and make a user account <a href="{% url 'register' %}">here</a>. If you would like to view the code behind the AI, click <a href="https://github.com/AnnabelleLew/political-bias-checker">here</a> to go to the GitHub repository.</p>
+    <h2>Terms of Service</h2>
+    <p>News Checker keeps track of the following data:</p>
+    <list>
+        <li class="about">Article biases submitted by the user</li>
+        <li class="about">The username associated with the article bias</li>
+        <li class="about">The email address used to register for an account</li>
+    </list>
+    <p>User accounts are being used to ensure that the data collected is not being purposefully skewed by individual users. User emails will be kept private and used exclusively to notify users of project updates. News Checker only collects data that users submit through the web extension, and the data collected will only be used for News Checker projects. Users will be notified and given the option to opt out before any data is sent to third parties. Cookies need to be enabled for the extension to work, since the extension uses cookies to check for which user is logged in. News Checker holds the right to terminate user accounts for any reason. If you believe your account has been terminated by mistake, please email me at annabelle.lew02@gmail.com.</p>
+    <h2>Disclaimer</h2>
+    <p>Please bear in mind that News Checker is not perfect. As the News Checker extension and website are both still being debugged, there may still be issues with both this website and the web extension. Any issues can be reported at annabelle.lew02@gmail.com.</p>
+    <h2>Credits</h2>
+    <p>Although the code was primarily written by Annabelle Lew, many aspects of the code used aspects of the Mozilla Developer tutorials for both Django and web extensions. In addition, the logo design was done by Kristen Lew.</p>
+{% endblock %}

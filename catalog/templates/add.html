@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--ADDING ARTICLE BIAS TO DATABASE PAGE HTML-->
+<html lang="en">
+    <head>
+        <title>News Checker</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Add additional CSS in static file -->
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <style>
+            body {
+                padding: 15px;
+                background-color: #e9e8e3;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Article successfully added to our database! Thank you for contributing!</p>
+        <a href="{% url 'index'%}" target="_blank" rel="noopener noreferrer">Click here to learn more about News Checker.</a>
+    </body>
+</html>
