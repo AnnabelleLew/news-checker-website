@@ -11,6 +11,9 @@ from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+import os
+from news_checker_website import settings
+from django.http import HttpResponse
 
 # Create your views here.
 # Homepage view: sets the username cookie here (possibly change later?)
@@ -33,6 +36,22 @@ def index(request):
 # About page view
 def about(request):
     return render(request, 'about.html')
+
+# Download page view
+def download(request):
+    return render(request, 'download.html')
+
+def firefox_download(request):
+    zip_file = os.path.join(settings.STATIC_ROOT, 'zip/news_checker_extension_firefox.zip', 'r')
+    response = HttpResponse(zip_file, content_type='application/force-download')
+    response['Content-Disposition'] = 'attachment; filename="%s"' % 'news_checker_extension_firefox.zip'
+    return response
+
+def chrome_download(request):
+    zip_file = os.path.join(settings.STATIC_ROOT, 'zip/news_checker_extension_chrome.zip', 'r')
+    response = HttpResponse(zip_file, content_type='application/force-download')
+    response['Content-Disposition'] = 'attachment; filename="%s"' % 'news_checker_extension_chrome.zip'
+    return response
 
 # Add view: adds an entry to the database here
 def add(request):

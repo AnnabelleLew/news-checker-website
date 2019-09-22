@@ -16,7 +16,8 @@
             <div class="menubar-nav">
                 <a href="{% url 'index' %}" class="menu-text">News Checker</a>
                 <div id="small-hidden-nav">
-                    <a href="{% url 'about'%}" class="menu-text">About</a>
+                    <a href="{% url 'about' %}" class="menu-text">About</a>
+                    <a href="{% url 'download' %}" class="menu-text">Download</a>
                     {% if user.is_authenticated or authenticated %}
                         <a href="{% url 'articles' %}" class="menu-text">Article History</a>
                         <a class="menu-text" href="{% url 'change_password' %}">{{ user.get_username }}{{ username }}</a>

@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+<!--DOWNLOAD PAGE HTML-->
+{% block content %}
+    <h1>Download</h1>
+    <p>As of right now, the News Checker extension is still in development, so downloads can only be made directly from this website.</p>
+    <h2>Firefox</h2>
+    <p>Click <a href="{% url 'firefox' %}">here</a> to download the extension for Firefox. Once downloaded, go to <a href="about:debugging#/runtime/this-firefox">about:debugging</a>, click on "Load Temporary Add-on", and click on the zip file in order to use it.</p>
+    <h2>Chrome</h2>
+    <p>Click <a href="{% url 'chrome' %}">here</a> to download the extension for Chrome. Once downloaded, unzip the file, go to <a href="chrome://extensions/">chrome://extensions</a>, click on "Load unpacked", and click on the unzipped folder in order to use it.</p>
+{% endblock %}
