@@ -53,6 +53,18 @@ def chrome_download(request):
     response['Content-Disposition'] = 'attachment; filename="%s"' % 'news_checker_extension_chrome.zip'
     return response
 
+def edge_download(request):
+    zip_file = os.path.join(settings.STATIC_ROOT, 'zip/news_checker_extension_edge.zip', 'r')
+    response = HttpResponse(zip_file, content_type='application/force-download')
+    response['Content-Disposition'] = 'attachment; filename="%s"' % 'news_checker_extension_edge.zip'
+    return response
+
+def opera_download(request):
+    zip_file = os.path.join(settings.STATIC_ROOT, 'zip/news_checker_extension_opera.zip', 'r')
+    response = HttpResponse(zip_file, content_type='application/force-download')
+    response['Content-Disposition'] = 'attachment; filename="%s"' % 'news_checker_extension_opera.zip'
+    return response
+
 # Add view: adds an entry to the database here
 def add(request):
     # Gets message from extension (which redirects here)
