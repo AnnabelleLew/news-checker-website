@@ -1,2 +1,5 @@
 settings.py
 **/__pycache__/
+passenger_wsgi.*
+tmp/
+**/static/txt/

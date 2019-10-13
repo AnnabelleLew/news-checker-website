@@ -19,6 +19,7 @@ from django.urls import include
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from catalog import views
 
 # The URLs and the associated views
 urlpatterns = [
@@ -26,4 +27,5 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),
     path('', RedirectView.as_view(url='/catalog/', permanent=True)),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('.well-known/pki-validation/7CAD372EF69C3A963E9161EBB719593E.txt', views.well_known),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,7 +1,9 @@
 /* font imports */
 @font-face {
     font-family: chomsky;
-    src: url(fonts/chomsky.otf);
+    src:
+    	url(fonts/Chomsky.otf)
+    	format('opentype');
 }
 
 /* navigation bar CSS */
@@ -172,6 +174,13 @@ td, th {
     #homepage-img-container {
         display: none;
     }
+    .left-align-text {
+    	/* used for homepage text */
+    	text-align: left;
+    	display: block;
+    	margin: 5px;
+    	width: 85%;
+	}
 }
 
 /* forms CSS */
